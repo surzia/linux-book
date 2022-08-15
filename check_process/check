@@ -1,0 +1,11 @@
+#!/bin/bash
+
+case $1 in
+"ps") ps -ef | grep run.sh
+;;
+"pgrep") pgrep -l run.sh
+;;
+"pidof") pidof -x run.sh
+;;
+"proc") grep "run.sh" /proc/[0-9]*/status | awk -F: '{split($1,a,/\//); print a[3] $3}'
+esac
