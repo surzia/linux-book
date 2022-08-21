@@ -1,0 +1,1 @@
+kill -9 `ps aux | awk {'if ($8 == "T") print $2'}`
